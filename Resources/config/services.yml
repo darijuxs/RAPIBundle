@@ -1,0 +1,15 @@
+services:
+    rapi.request:
+        class: RAPIBundle\Request\Request
+        arguments: [@request_stack]
+
+    rapi.response:
+        class: RAPIBundle\Response\Response
+
+    rapi.mapper:
+        class: RAPIBundle\DataMapper\Mapper
+        abstract:  true
+
+    rapi.data_mapper:
+        class: RAPIBundle\DataMapper\DataMapper
+        parent: rapi.mapper
