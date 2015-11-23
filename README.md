@@ -23,7 +23,7 @@ Open `composer.json` file and add
   "repositories": [
     {
       "type": "vcs",
-      "url": "git clone git@bitbucket.org:bungalowsystems/rapibundle.git"
+      "url": "git@bitbucket.org:bungalowsystems/rapibundle.git"
     }
   ],
 ```
