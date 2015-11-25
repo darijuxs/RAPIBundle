@@ -31,7 +31,7 @@ Open `composer.json` file and add
 Run command to install required bundle.
 
 ```
-composer require rapi "1.0.0"
+composer require rapi "1.0.*"
 ```
   
   
@@ -235,3 +235,12 @@ $response->send();
 ```
   
 **Remember: use profiler only in development environment!!!**  
+
+Change Log
+---------------------------
+
+* Version 1.0.0  
+  - Init project  
+  
+* Version 1.0.1  
+  - Fixed that data mapper will work with Doctrine proxy classes.

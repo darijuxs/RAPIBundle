@@ -4,6 +4,7 @@ namespace RAPIBundle\DataMapper;
 
 use ReflectionClass;
 use ReflectionMethod;
+use Doctrine\Common\Util\ClassUtils;
 use Doctrine\ORM\PersistentCollection as ORMCollection;
 use Doctrine\ODM\MongoDB\PersistentCollection as ODMCollection;
 use RAPIBundle\DataMapper\Annotation\Object;
@@ -42,7 +43,7 @@ class DataMapper extends Mapper
             /* @var Annotation $methodReader */
             if ($methodReader !== null) {
                 $property = $this->methodToPropertyName($methodName);
-                $data = $methodReader->convert($reflectionMethod->invoke($object));
+                $data = $methodReader->convert($object->$methodName());
 
                 if ($filter !== null and !in_array($property, $filter) and !array_key_exists($property, $filter)) {
                     continue;
@@ -70,7 +71,7 @@ class DataMapper extends Mapper
      */
     private function getClassName($object)
     {
-        return get_class($object);
+        return ClassUtils::getClass($object);
     }
 
     /**
