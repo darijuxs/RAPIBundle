@@ -34,7 +34,7 @@ class RAPIController extends Controller
     public function getRequest()
     {
         if ($this->request === null) {
-            $this->request = $this->get('rapi.request');
+            $this->request = $this->get('bs.rapi.request');
         }
 
         return $this->request;
@@ -46,7 +46,7 @@ class RAPIController extends Controller
     public function getResponse()
     {
         if ($this->response === null) {
-            $this->response = $this->get('rapi.response');
+            $this->response = $this->get('bs.rapi.response');
         }
 
         return $this->response;
@@ -58,7 +58,7 @@ class RAPIController extends Controller
     public function getDataMapper()
     {
         if ($this->dataMapper === null) {
-            $this->dataMapper = $this->get('rapi.data_mapper');
+            $this->dataMapper = $this->get('bs.rapi.data_mapper');
         }
 
         return $this->dataMapper;

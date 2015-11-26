@@ -113,7 +113,7 @@ RAPIBundle use custom format to return JSON response
 Extending controller
 ---------------------------
 
-RAPIBundle logic is separated into few services `rapi.request`, `rapi.response`, `rapi.data_mapper`  
+RAPIBundle logic is separated into few services `bs.rapi.request`, `bs.rapi.response`, `bs.rapi.data_mapper`  
 To use these services in your controller you can simple extend RAPIBundle controller:
   
 ```php
