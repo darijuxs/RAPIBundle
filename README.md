@@ -31,7 +31,7 @@ Open `composer.json` file and add
 Run command to install required bundle.
 
 ```
-composer require rapi "1.0.*"
+composer require bs/rapi "1.0.*"
 ```
   
   
@@ -244,3 +244,6 @@ Change Log
   
 * Version 1.0.1  
   - Fixed that data mapper will work with Doctrine proxy classes.
+  
+* Version 1.0.2
+  - Moved to bs namespace

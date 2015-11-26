@@ -1,26 +1,35 @@
 {
-  "name": "rapi",
-  "description": "Rest API bundle that return .json response",
-  "type": "symfony-bundle",
-  "authors": [
-    {
-      "name": "Darius Džervus",
-      "email": "team.duel@gmail.com"
+    "name": "bs/rapi",
+    "description": "Rest API bundle that return .json response",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Darius Džervus",
+            "email": "team.duel@gmail.com"
+        },
+        {
+            "name": "Vaidas Strikauskas",
+            "email": "vaidas.strikauskas@gmail.com"
+        }
+    ],
+    "keywords": [
+        "rest",
+        "rest api"
+    ],
+    "license": [
+        "MIT"
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "RAPIBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "develop"
+        }
     }
-  ],
-  "keywords": ["rest", "rest api"],
-  "license": [
-    "MIT"
-  ],
-  "require": {
-    "php": ">=5.4"
-  },
-  "autoload": {
-    "psr-4": {"RAPIBundle\\": ""}
-  },
-  "extra": {
-      "branch-alias": {
-        "dev-master": "master"
-      }
-  }
 }
