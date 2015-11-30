@@ -246,4 +246,7 @@ Change Log
   - Fixed that data mapper will work with Doctrine proxy classes.
   
 * Version 1.0.2
-  - Moved to bs namespace
+  - Moved to bs namespace  
+  
+* Version 1.0.3
+  - Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200
