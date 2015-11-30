@@ -212,6 +212,16 @@ Available data mapper types
 @DataMapper\Object()
 ```
 
+Data types *@DataMapper\Date()*, *@DataMapper\Time()*, *@DataMapper\DateTime()*, *@DataMapper\Timestamp()* require
+that PHP object value will be **DateTime** object.
+
+Data types *@DataMapper\Date()*, *@DataMapper\Time()*, *@DataMapper\Number()* support custom parameters. 
+*@DataMapper\Date()* and *@DataMapper\Time()* support **format** parameter that uses standard PHP date format. By default 
+*@DataMapper\Date()* returns date - "Y-m-d" *@DataMapper\Time()* returns time - "H:i:s". Both these methods can return
+full date and time like a string if user use **format="Y-m-d H:i:s"**. 
+*@DataMapper\Number()* return number as string. It support **decimals**, **separator**, **thousand_separator** parameters. This
+method deal with object value same like PHP function *number_format*.  
+  
 Using profiler
 ---------------------------
 
