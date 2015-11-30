@@ -31,7 +31,7 @@ Open `composer.json` file and add
 Run command to install required bundle.
 
 ```
-composer require rapi "1.0.0"
+composer require bs/rapi "1.0.*"
 ```
   
   
@@ -113,7 +113,7 @@ RAPIBundle use custom format to return JSON response
 Extending controller
 ---------------------------
 
-RAPIBundle logic is separated into few services `rapi.request`, `rapi.response`, `rapi.data_mapper`  
+RAPIBundle logic is separated into few services `bs.rapi.request`, `bs.rapi.response`, `bs.rapi.data_mapper`  
 To use these services in your controller you can simple extend RAPIBundle controller:
   
 ```php
@@ -235,3 +235,18 @@ $response->send();
 ```
   
 **Remember: use profiler only in development environment!!!**  
+
+Change Log
+---------------------------
+
+* Version 1.0.0  
+  - Init project  
+  
+* Version 1.0.1  
+  - Fixed that data mapper will work with Doctrine proxy classes.
+  
+* Version 1.0.2
+  - Moved to bs namespace  
+  
+* Version 1.0.3
+  - Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200

@@ -3,6 +3,8 @@
 namespace RAPIBundle\Response;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class Response
@@ -46,19 +48,22 @@ class Response extends JsonResponse
      * @var array|null
      */
     private $result;
-
     /**
      * @var
      */
     private $profiler;
+    /**
+     * @return Request|null
+     */
+    private $request;
 
-    public function __construct()
+    public function __construct(RequestStack $requestStack)
     {
         parent::__construct();
-
         $this->statusCode = HttpStatusCode::HTTP_OK;
 
-        $this->headers->set('X-Status-Code', 200);
+        $this->request = $requestStack->getCurrentRequest();
+
         $this->headers->set('Access-Control-Allow-Origin', '*');
         $this->headers->set('Access-Control-Allow-Credentials', 'true');
         $this->headers->set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -167,6 +172,11 @@ class Response extends JsonResponse
      */
     public function get()
     {
+        //Used for angular_js to continue work
+        if ($this->request->getMethod() === "OPTIONS") {
+            $this->setStatusCode(HttpStatusCode::HTTP_OK);
+        }
+
         return $this->setData($this->createStructure());
     }
 
