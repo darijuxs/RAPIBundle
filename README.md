@@ -259,4 +259,7 @@ Change Log
   - Moved to bs namespace  
   
 * Version 1.0.3
-  - Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200
+  - Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200  
+  
+* Version 1.0.4
+  - Added @request_stact in quates to work with Symfony 3
