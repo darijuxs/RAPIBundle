@@ -14,3 +14,9 @@ services:
     bs.rapi.data_mapper:
         class: RAPIBundle\DataMapper\DataMapper
         parent: bs.rapi.mapper
+
+    bs.rapi.exception_listener:
+        class: RAPIBundle\Listener\ExceptionListener
+        arguments: ["@request_stack", "%kernel.environment%"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
