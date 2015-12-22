@@ -2,7 +2,7 @@
 
 namespace RAPIBundle\DataMapper\Annotation;
 
-use DateTime;
+use DateTime as GlobalDateTime;
 use RAPIBundle\DataMapper\Exception\InvalidTypeException;
 
 /**
@@ -23,7 +23,7 @@ final class Timestamp extends Annotation
             return null;
         }
 
-        if (!$value instanceof DateTime) {
+        if (!$value instanceof GlobalDateTime) {
             throw new InvalidTypeException($value, get_class($this));
         }
 
