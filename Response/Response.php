@@ -194,7 +194,7 @@ class Response extends JsonResponse
         ];
 
         //When error happens
-        if ($this->statusCode > 399) {
+        if (!empty($this->errors)) {
             $array[self::ERROR_MESSAGE] = [
                 self::ERRORS => $this->errors
             ];

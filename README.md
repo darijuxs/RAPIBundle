@@ -212,14 +212,15 @@ Available data mapper types
 @DataMapper\Object()
 ```
 
-Data types *@DataMapper\Date()*, *@DataMapper\Time()*, *@DataMapper\DateTime()*, *@DataMapper\Timestamp()* require
+Data types `@DataMapper\Date()`, `@DataMapper\Time()`, `@DataMapper\DateTime()`, `@DataMapper\Timestamp()` require
 that PHP object value will be **DateTime** object.
 
-Data types *@DataMapper\Date()*, *@DataMapper\Time()*, *@DataMapper\Number()* support custom parameters. 
-*@DataMapper\Date()* and *@DataMapper\Time()* support **format** parameter that uses standard PHP date format. By default 
-*@DataMapper\Date()* returns date - "Y-m-d" *@DataMapper\Time()* returns time - "H:i:s". Both these methods can return
-full date and time like a string if user use **format="Y-m-d H:i:s"**. 
-*@DataMapper\Number()* return number as string. It support **decimals**, **separator**, **thousand_separator** parameters. This
+Data types `@DataMapper\DateTime()`, `@DataMapper\Date()`, `@DataMapper\Time()`, `@DataMapper\Number()` support custom parameters. 
+`@DataMapper\DateTime()`, `@DataMapper\Date()` and `@DataMapper\Time()` support **format** parameter that uses standard PHP date format.
+By default `@DataMapper\Date()` returns date - "Y-m-d", `@DataMapper\Time()` returns time - "H:i:s". Both these methods can return
+full date and time like a string if user use **format="Y-m-d H:i:s"**. `@DataMapper\DateTime()` by default return PHP **DateTime** object.
+If there is need to return only date and time string user should use optional parameter **object=false**. 
+`@DataMapper\Number()` return number as string. It support **decimals**, **separator**, **thousand_separator** parameters. This
 method deal with object value same like PHP function *number_format*.  
   
 Using profiler
@@ -250,16 +251,20 @@ Change Log
 ---------------------------
 
 * Version 1.0.0  
-  - Init project  
+  Init project  
   
 * Version 1.0.1  
-  - Fixed that data mapper will work with Doctrine proxy classes.
+  Fixed that data mapper will work with Doctrine proxy classes.
   
 * Version 1.0.2
-  - Moved to bs namespace  
+  Moved to bs namespace  
   
 * Version 1.0.3
-  - Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200  
+  Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200  
   
-* Version 1.0.4
-  - Added @request_stact in quates to work with Symfony 3
+* Version 1.0.4  
+  Added @request_stact in quates to work with Symfony 3  
+  
+* Version 1.0.5  
+  Added `onKernelException` method that catch all main error and convert these errors to JSON response. Added custom
+  parameters to `@DataMapper\DateTime()` (format and object)
