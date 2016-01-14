@@ -157,6 +157,22 @@ class Response extends JsonResponse
         return $this;
     }
 
+    /**
+     * @param string $error
+     * @param string|null $key
+     * @return $this
+     */
+    public function addError($error, $key = null)
+    {
+        if (null === $key) {
+            $this->errors[] = $error;
+        } else {
+            $this->errors[$key] = $error;
+        }
+
+        return $this;
+    }
+
     public function setProfiler($profiler)
     {
         $this->profiler = $profiler;
