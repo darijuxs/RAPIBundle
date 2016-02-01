@@ -190,7 +190,9 @@ class Response extends JsonResponse
     {
         //Used for angular_js to continue work
         if ($this->request->getMethod() === "OPTIONS") {
-            $this->setStatusCode(HttpStatusCode::HTTP_OK);
+            $this
+                ->setStatusCode(HttpStatusCode::HTTP_OK)
+                ->headers->set('X-Status-Code', 200);
         }
 
         return $this->setData($this->createStructure());
