@@ -256,10 +256,10 @@ Change Log
 * Version 1.0.1  
   Fixed that data mapper will work with Doctrine proxy classes.
   
-* Version 1.0.2
+* Version 1.0.2  
   Moved to bs namespace  
   
-* Version 1.0.3
+* Version 1.0.3  
   Fixed angular js error when come request OPTIONS, now all OPTIONS response code will be 200  
   
 * Version 1.0.4  
@@ -268,3 +268,7 @@ Change Log
 * Version 1.0.5  
   Added `onKernelException` method that catch all main error and convert these errors to JSON response. Added custom
   parameters to `@DataMapper\DateTime()` (format and object)
+  
+* Version 1.0.8  
+  Fixed request  `get` that values `false` and `0` can be returned.  
+  

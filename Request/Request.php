@@ -35,10 +35,7 @@ class Request
     public function get($name)
     {
         $content = $this->getData();
-
-        return (isset($content[$name]) && (is_array($content[$name]) || !empty($content[$name]))) ?
-            $content[$name] :
-            null;
+        return (isset($content[$name])) ? $content[$name] : null;
     }
 
     /**
